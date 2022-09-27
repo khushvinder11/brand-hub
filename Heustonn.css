@@ -1,0 +1,523 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-red: rgb(104, 85, 85);
+  --all-color: rgb(80, 145, 219);
+}
+
+/* navbar start...................... */
+header {
+  width: 100%;
+  height: 60px;
+  background: var(--color-red);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .logo {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header .menu {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  margin-bottom: 0;
+}
+
+header .menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.9s;
+}
+
+header .menu li:first-child a:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  text-align: center;
+  height: 3px;
+  background: white;
+  bottom: -5px;
+}
+
+header .menu li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  text-align: center;
+  height: 3px;
+  background: white;
+  bottom: -5px;
+}
+
+header .icon i {
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+header .checkbtn,
+#check {
+  color: white;
+  font-size: 30px;
+  order: 3;
+  display: none;
+}
+/* navbar end...................... */
+/* navbar 768 screen */
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+    justify-content: space-around;
+  }
+
+  header .menu-box {
+    background: black;
+    width: 100%;
+    /* height: 0vh; */
+    position: absolute;
+    top: 60px;
+    display: none;
+    transition: all 1s ease-in-out;
+  }
+
+  #check:checked ~ .menu-box {
+    height: auto;
+    display: block;
+  }
+
+  header .menu-box .menu {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 23px;
+    padding-left: 0;
+  }
+
+  header .menu-box .menu li:nth-child(5) {
+    margin-bottom: 22px;
+  }
+
+  header .icon i {
+    position: absolute;
+    right: 25%;
+    top: 20px;
+  }
+
+  header .checkbtn {
+    display: block;
+  }
+
+  #check:checked ~ .checkbtn i::before {
+    content: "\f00d";
+  }
+}
+/* navbar 768 screen */
+
+/* section one start.............................. */
+.section-one .image {
+  width: 100%;
+}
+
+.section-one .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.section-one h1 {
+  font-size: 67px;
+}
+
+.section-one h1 .color {
+  color: var(--all-color);
+}
+.section-one p {
+  letter-spacing: 1px;
+  margin-top: 22px;
+}
+/* ................................990px */
+@media screen and (max-width: 990px) {
+  .section-one h1 {
+    font-size: 57px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-one h1 {
+    font-size: 45px;
+    text-align: center;
+    margin-top: 33px;
+  }
+
+  .section-one p {
+    padding: 0 30px;
+  }
+}
+/* section one end.............................. */
+/* section two start........................ */
+.section-two h1 {
+  font-size: 39px;
+  border-bottom: 3px solid var(--all-color);
+  padding-bottom: 9px;
+  margin-bottom: 39px;
+}
+
+.section-two p {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ............ */
+@media screen and (max-width: 768px) {
+  .section-two h1 {
+    font-size: 30px;
+  }
+}
+/* section two end.............................. */
+/* section three start........................ */
+.section-three h1 {
+  font-size: 39px;
+  border-bottom: 3px solid var(--all-color);
+  padding-bottom: 9px;
+  margin-bottom: 19px;
+}
+
+.section-three .pera-top {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 9px;
+  margin-bottom: 80px;
+}
+
+.section-three .image {
+  width: 100%;
+  margin-top: 29px;
+}
+.section-three img {
+  width: 100%;
+}
+
+.section-three .card-box p {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 18px;
+  padding: 0 4px;
+}
+
+.section-three .card-box p:not(:nth-child(4)) {
+  margin: 33px 0;
+}
+
+/* ............ */
+@media screen and (max-width: 768px) {
+  .section-three h1 {
+    font-size: 30px;
+  }
+}
+/* section three end........................ */
+/* animation start ............................. */
+.animation {
+  background: var(--all-color);
+  margin-top: 90px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.animation .card-box {
+  width: 200px;
+  height: 250px;
+  background: white;
+  margin: 34px 0;
+  border-radius: 4px;
+}
+
+.animation .card-up1 {
+  animation: up-do 2.5s linear infinite alternate-reverse;
+}
+
+.animation .card-up2 {
+  animation: up-do 2s linear 0.5s infinite alternate-reverse;
+}
+
+.animation .card-up3 {
+  animation: up-do 2.5s linear infinite alternate-reverse;
+}
+
+.animation .card-up4 {
+  animation: up-do 2s linear 0.5s infinite alternate-reverse;
+}
+
+@keyframes up-do {
+  0% {
+    transform: translateY(-29px);
+  }
+  20% {
+    transform: translateY(29px);
+  }
+  40% {
+    transform: translateY(-29px);
+  }
+  60% {
+    transform: translateY(29px);
+  }
+  80% {
+    transform: translateY(-29px);
+  }
+  100% {
+    transform: translateY(29px);
+  }
+}
+
+.animation .image {
+  width: 100%;
+  height: 83%;
+}
+
+.animation .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.animation .card-box p {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 9px;
+}
+
+/* ............... */
+@media screen and (max-width: 993px) {
+  .animation {
+    height: auto;
+  }
+}
+
+/* animation end ............................. */
+
+/* section four start........................ */
+.section-four {
+  margin-top: 90px;
+}
+
+.section-four h1 {
+  font-size: 39px;
+  border-bottom: 3px solid var(--all-color);
+  padding-bottom: 9px;
+  margin-bottom: 56px;
+}
+
+.section-four form,
+input {
+  width: 100%;
+}
+
+.section-four input {
+  margin-top: 19px;
+  padding: 14px 0 0 9px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(197, 195, 195);
+}
+
+.section-four input::placeholder {
+  color: rgb(153, 149, 149);
+}
+
+.section-four button {
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding: 4px 23px !important;
+}
+/* ............................ */
+@media screen and (max-width: 768px) {
+  .section-four h1 {
+    font-size: 30px;
+  }
+}
+/* section four end........................ */
+/* section five start........................ */
+.section-five {
+  margin-top: 80px;
+}
+
+.section-five h1 {
+  font-size: 39px;
+  border-bottom: 3px solid var(--all-color);
+  padding-bottom: 9px;
+  margin-bottom: 56px;
+}
+
+.section-five .content p {
+  font-size: 20px;
+  word-spacing: 2px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.section-five .card-box {
+  border: 2px solid rgb(219, 214, 214);
+  box-sizing: border-box;
+  padding: 50px 29px;
+  box-shadow: 3px 3px 4px 2px rgb(231, 230, 230),
+    -3px -3px 4px 2px rgb(231, 230, 230);
+}
+
+.section-five .card-box .image {
+  margin-top: 23px;
+}
+
+.section-five .card-box .image img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.section-five .card-box .ownar {
+  margin: 9px 0 0 18px;
+}
+.section-five .card-box .ownar p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.section-five .card-box .ownar p:not(:nth-child(2)) {
+  margin-top: 14px;
+}
+
+.section-five .card-box .ownar .red {
+  color: red;
+}
+
+/* ............................ */
+@media screen and (max-width: 768px) {
+  .section-five .card-box {
+    padding: 50px 23px;
+  }
+
+  .section-five .card-box .ownar {
+    margin: 9px 0 0 12px;
+  }
+
+  .section-five .card-box .content p {
+    font-size: 16px;
+    word-spacing: 1px;
+  }
+
+  .section-five .card-box .ownar p {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+}
+/* section five end........................ */
+/* footer start........................ */
+.footer {
+  margin-top: 70px;
+  background: var(--all-color);
+}
+
+.footer h3 {
+  margin-top: 43px;
+  color: white;
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.footer hr {
+  opacity: 1;
+  color: white;
+}
+
+.footer .f-contant h3,
+.f-p,
+li,
+li a {
+  color: white;
+}
+
+.footer .f-contant .f-p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer .f-p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer .f-p i {
+  font-size: 15px;
+}
+.footer h4 {
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.footer li {
+  margin-bottom: 13px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 990px) {
+  .footer h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .footer h4 {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footer li {
+    font-size: 16px;
+  }
+
+  .footer ul {
+    text-align: center;
+    list-style: none;
+  }
+
+  .footer li a {
+    font-size: 16px;
+  }
+
+  .footer .f-contant .f-p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .footer .f-p {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* footer end........................ */
